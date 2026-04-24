@@ -34,7 +34,9 @@ export function Navbar() {
         <div className="container-default flex justify-between items-center">
           <span>
             IRA Licensed Insurer — Reg. No.{" "}
-            <strong className="text-gold-400">{SITE_CONFIG.registrationNo}</strong>
+            <strong className="text-gold-400">
+              {SITE_CONFIG.registrationNo}
+            </strong>
           </span>
           <a
             href={`tel:${SITE_CONFIG.phoneTel}`}
@@ -65,15 +67,9 @@ export function Navbar() {
             className="flex items-center gap-3 group"
             aria-label={`${SITE_CONFIG.name} — Home`}
           >
-            {/* Logo Mark */}
-            <div className="relative w-10 h-10 flex-shrink-0">
-              <div className="w-10 h-10 bg-gold-gradient rounded-lg flex items-center justify-center shadow-gold-glow group-hover:scale-105 transition-transform duration-200">
-              <Link
-                href="/"
-                aria-label="home"
-                className="flex items-center space-x-2"
-              >
-                {/* <Logo /> */}
+            {/* Logo Mark - INCREASED SIZE */}
+            <div className="relative w-16 h-16 flex-shrink-0">
+              <div className="w-16 h-16 bg-gold-800 rounded-lg flex items-center justify-center shadow-gold-glow group-hover:scale-105 transition-transform duration-200">
                 <Image
                   src="/logo.png"
                   alt={SITE_CONFIG.name}
@@ -81,7 +77,6 @@ export function Navbar() {
                   height={140}
                   className="size-32 object-contain"
                 />
-              </Link>
               </div>
             </div>
             <div className="hidden sm:block">
@@ -122,10 +117,7 @@ export function Navbar() {
             >
               <Phone size={16} />
             </a>
-            <Link
-              href="/quote"
-              className="btn-primary text-sm px-5 py-2.5"
-            >
+            <Link href="/quote" className="btn-primary text-sm px-5 py-2.5">
               Get a Free Quote
             </Link>
           </div>
@@ -174,7 +166,10 @@ export function Navbar() {
                 <Phone size={16} />
                 {SITE_CONFIG.phone}
               </a>
-              <Link href="/quote" className="btn-primary text-sm mx-0 justify-center">
+              <Link
+                href="/quote"
+                className="btn-primary text-sm mx-0 justify-center"
+              >
                 Get a Free Quote
               </Link>
             </div>
