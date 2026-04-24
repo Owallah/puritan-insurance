@@ -1,0 +1,1 @@
+export { PaystackPaymentDialog } from "./PaystackPaymentDialog";

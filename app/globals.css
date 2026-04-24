@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,700;0,800;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --navy: #0a1849;
+  --gold: #e6c367;
+  --gold-dark: #d4a832;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans text-gray-900 bg-white;
+  }
+
+  h1, h2, h3, h4 {
+    @apply leading-tight;
+  }
+}
+
+@layer components {
+  /* ─── Buttons ─── */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-gold-500 text-navy-900 font-semibold px-6 py-3 rounded-lg
+           hover:bg-gold-600 active:scale-95 transition-all duration-200 shadow-gold-glow hover:shadow-none
+           focus:outline-none focus:ring-2 focus:ring-gold-400 focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-white text-navy-900 font-semibold px-6 py-3 rounded-lg
+           border-2 border-navy-900 hover:bg-navy-900 hover:text-white active:scale-95 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-navy-400 focus:ring-offset-2;
+  }
+
+  .btn-outline-white {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent text-white font-semibold px-6 py-3 rounded-lg
+           border-2 border-white/60 hover:bg-white hover:text-navy-900 active:scale-95 transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-navy-900;
+  }
+
+  /* ─── Section Layout ─── */
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-default {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* ─── Cards ─── */
+  .card-base {
+    @apply bg-white rounded-2xl shadow-navy-md border border-gray-100 transition-all duration-300;
+  }
+
+  .card-hover {
+    @apply hover:shadow-navy-lg hover:-translate-y-1;
+  }
+
+  /* ─── Form Elements ─── */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-gray-900
+           focus:outline-none focus:ring-2 focus:ring-navy-300 focus:border-navy-400
+           placeholder:text-gray-400 transition-all duration-200
+           disabled:bg-gray-50 disabled:text-gray-500;
+  }
+
+  .form-input-error {
+    @apply border-red-400 focus:ring-red-300 focus:border-red-400;
+  }
+
+  .form-label {
+    @apply block text-sm font-semibold text-gray-700 mb-1.5;
+  }
+
+  .form-error {
+    @apply text-sm text-red-600 mt-1 flex items-center gap-1;
+  }
+
+  /* ─── Section Headings ─── */
+  .section-eyebrow {
+    @apply text-sm font-semibold tracking-widest uppercase text-gold-600;
+  }
+
+  .section-title {
+    @apply font-display text-3xl md:text-4xl lg:text-5xl font-bold text-navy-900;
+  }
+
+  .section-subtitle {
+    @apply text-lg text-gray-600 leading-relaxed max-w-2xl;
+  }
+
+  /* ─── Gold Divider ─── */
+  .gold-divider {
+    @apply w-16 h-1 bg-gold-500 rounded-full;
+  }
+}
+
+@layer utilities {
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+  .animate-delay-600 { animation-delay: 600ms; }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+}
