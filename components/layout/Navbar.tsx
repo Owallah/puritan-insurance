@@ -53,8 +53,8 @@ export function Navbar() {
         className={cn(
           "sticky top-0 z-50 w-full transition-all duration-300",
           isScrolled
-            ? "bg-navy-400/70 backdrop-blur-md shadow-navy-lg"
-            : "bg-navy-900"
+            ? "bg-navy-200/80 backdrop-blur shadow-navy-lg"
+            : "bg-navy-100/90"
         )}
       >
         <nav
@@ -68,25 +68,25 @@ export function Navbar() {
             aria-label={`${SITE_CONFIG.name} — Home`}
           >
             {/* Logo Mark - INCREASED SIZE */}
-            <div className="relative w-16 h-16 flex-shrink-0">
-              <div className="w-16 h-16 bg-gold-800 rounded-lg flex items-center justify-center shadow-gold-glow group-hover:scale-105 transition-transform duration-200">
+            {/* <div className="relative w-16 h-16 flex-shrink-0"> */}
+              {/* <div className="w-16 h-16 bg-gold-800 rounded-lg flex items-center justify-center shadow-gold-glow group-hover:scale-105 transition-transform duration-200"> */}
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt={SITE_CONFIG.name}
                   width={140}
                   height={140}
-                  className="size-32 object-contain"
+                  className="size-40 object-contain"
                 />
-              </div>
-            </div>
-            <div className="hidden sm:block">
+              {/* </div> */}
+            {/* </div> */}
+            {/* <div className="hidden sm:block">
               <div className="font-display text-xl font-bold text-white leading-none">
                 Puritan
               </div>
               <div className="text-gold-400 text-xs font-medium tracking-widest uppercase leading-none mt-0.5">
                 Insurance Agency
               </div>
-            </div>
+            </div> */}
           </Link>
 
           {/* Desktop Navigation */}
@@ -98,8 +98,8 @@ export function Navbar() {
                 className={cn(
                   "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
                   isActive(link.href)
-                    ? "bg-white/10 text-gold-400"
-                    : "text-white/80 hover:text-white hover:bg-white/8"
+                    ? "bg-white/10 text-gold-900"
+                    : "text-navy-800 hover:text-gold-400 hover:bg-white/8"
                 )}
                 aria-current={isActive(link.href) ? "page" : undefined}
               >
@@ -112,7 +112,7 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <a
               href={`tel:${SITE_CONFIG.phoneTel}`}
-              className="flex items-center gap-2 text-white/70 hover:text-gold-400 text-sm transition-colors"
+              className="flex items-center gap-2 text-gold-900/70 hover:text-gold-400 text-sm transition-colors"
               aria-label="Call us"
             >
               <Phone size={16} />
@@ -125,7 +125,7 @@ export function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg text-white hover:bg-white/10 transition-colors"
+            className="md:hidden p-2 rounded-lg text-gold-900 hover:bg-white/10 transition-colors"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             aria-controls="mobile-menu"
@@ -151,8 +151,8 @@ export function Navbar() {
                 className={cn(
                   "flex items-center px-4 py-3 rounded-lg text-sm font-medium transition-all",
                   isActive(link.href)
-                    ? "bg-white/10 text-gold-400"
-                    : "text-white/80 hover:text-white hover:bg-white/8"
+                    ? "bg-white/10 text-gold-900"
+                    : "text-navy-800 hover:text-gold-400 hover:bg-white/8"
                 )}
               >
                 {link.label}

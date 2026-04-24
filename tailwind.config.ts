@@ -36,8 +36,9 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-dm-sans)", "system-ui", "sans-serif"],
-        display: ["var(--font-playfair)", "serif"],
+        sans: ["var(--font-dm-sans)", "poppins", "sans-serif"],
+        display: ["var(--font-dm-sans)", "poppins"],
+        // display: ["var(--font-playfair)", "poppins"],
       },
       backgroundImage: {
         "hero-pattern":

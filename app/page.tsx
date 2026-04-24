@@ -22,26 +22,6 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <HeroSection />
-
-      {/* Trust */}
-      <section className="border-y border-border bg-gold-50">
-          <div className="mx-auto grid max-w-7xl gap-6 px-4 py-12 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
-            {TRUST_INDICATORS.map((indiicator, index) => {
-              const Icon = trustIcons[index] ?? ShieldCheck;
-              return (
-                <div key={indiicator.label} className="flex items-start gap-4">
-                  <div className="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-navy-800 text-gold-50">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="font-semibold text-gold-900">{indiicator.label}</p>
-                    <p className="text-sm text-muted-gold-900">{indiicator.value}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </section>
        
 
       {/* Services Preview */}
@@ -98,18 +78,18 @@ export default function HomePage() {
                 {[
                   {
                     icon: Shield,
-                    title: "IRA Licensed & Regulated",
-                    desc: "Fully compliant with the Insurance Regulatory Authority of Kenya.",
+                    title: "Industry Specialization",
+                    desc: "Deep focus on the key industries of Construction, general trading, energy, manufacturing.",
                   },
                   {
                     icon: Zap,
-                    title: "Fast-Track Claims",
-                    desc: "Most motor and property claims processed within 5 business days.",
+                    title: "Proactive Risk Management",
+                    desc: "We undertake risk audit and advise on safety compliance to ensure business continuity. ",
                   },
                   {
                     icon: HeartHandshake,
-                    title: "Dedicated Account Managers",
-                    desc: "Every client gets a personal account manager, not a call center script.",
+                    title: "Claims Advocacy That Delivers ",
+                    desc: "structured claims escalation process that ensures speedy settlement.",
                   },
                 ].map(({ icon: Icon, title, desc }) => (
                   <div key={title} className="flex items-start gap-4">

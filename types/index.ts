@@ -15,7 +15,7 @@ export interface InsuranceService {
   premium?: PremiumOption[];
 }
 
-export type ServiceCategory = "personal" | "commercial" | "life" | "specialty";
+export type ServiceCategory = "personal" | "commercial" | "life" | "specialty" | "contractors" | "liability" | "property" | "motor" | "marine";
 
 // ─────────────────────────────────────────────
 // Quote Form Types

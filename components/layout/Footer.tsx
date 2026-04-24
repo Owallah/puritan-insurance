@@ -23,22 +23,14 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5 group w-fit">
-              <div className="w-10 h-10 bg-gold-800 rounded-lg flex items-center justify-center shadow-gold-glow flex-shrink-0">
+              <div className="w-auto h-16 bg-gold-50 rounded-lg flex items-center justify-center shadow-gold-glow flex-shrink-0">
                 <Image
-                  src="/logo.png"
+                  src="/logo.webp"
                   alt={SITE_CONFIG.name}
                   width={140}
                   height={140}
-                  className="size-32 object-contain"
+                  className="size-40 object-contain"
                 />
-              </div>
-              <div>
-                <div className="font-display text-xl font-bold text-white leading-none">
-                  Puritan
-                </div>
-                <div className="text-gold-400 text-xs font-medium tracking-widest uppercase mt-0.5">
-                  Insurance Agency
-                </div>
               </div>
             </Link>
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, HeartHandshake, Shield, Zap } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { SERVICES } from "@/lib/data";
@@ -9,14 +9,19 @@ import type { ServiceCategory } from "@/types";
 export const metadata: Metadata = {
   title: "Our Insurance Services",
   description:
-    "Explore Apex Insurance's full range of products — motor, health, life, marine, fire & property, business, travel, and agriculture insurance.",
+    "Explore Puritan Insurance Agency's full range of products — motor, health, life, marine, fire & property, business, travel, and agriculture insurance.",
 };
 
 const CATEGORY_LABELS: Record<ServiceCategory, string> = {
   personal: "Personal Insurance",
   commercial: "Commercial Insurance",
   life: "Life & Investment",
-  specialty: "Specialty Cover",
+  specialty: "Specialty Lines",
+  contractors: "Contractors All Risk",
+  liability: "Liability and Personal Accident",
+  property: "Property and Accident",
+  motor: "Motor Commercial and Private",
+  marine: "Marine and Transit Insurance",
 };
 
 const CATEGORY_DESCRIPTIONS: Record<ServiceCategory, string> = {
@@ -24,9 +29,14 @@ const CATEGORY_DESCRIPTIONS: Record<ServiceCategory, string> = {
   commercial: "Safeguard your business assets",
   life: "Secure your financial future",
   specialty: "Industry-specific solutions",
+  contractors: "This covers those in construction or long-term contracts for the benefit of the employer",
+  liability: "This covers liabilities arising from accidental injury to the general public from the use of property or premises. It includes statutory covers such as WIBA.",
+  property: "This cover damage to property and goods thereon against accidental damage by fire and related perils. The cover includes consequential loss following the property damage.",
+  motor: "This covers motor vehicles for commercial and private use.",
+  marine: "This covers shipment of goods for both local and international trade.",
 };
 
-const CATEGORIES: ServiceCategory[] = ["personal", "life", "commercial", "specialty"];
+const CATEGORIES: ServiceCategory[] = ["personal", "life", "commercial", "specialty", "contractors", "liability", "property", "motor", "marine"];
 
 export default function ServicesPage() {
   const servicesByCategory = CATEGORIES.map((cat) => ({
@@ -51,7 +61,7 @@ export default function ServicesPage() {
           </h1>
           <div className="gold-divider mx-auto mb-6" />
           <p className="text-white/65 text-lg max-w-2xl mx-auto leading-relaxed">
-            Eight comprehensive insurance products, designed around the real needs of
+            Nine comprehensive insurance products, designed around the real needs of
             Kenyans — from first-time vehicle owners to large enterprises.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
@@ -122,39 +132,36 @@ export default function ServicesPage() {
           <div className="text-center mb-12">
             <p className="section-eyebrow text-gold-400 mb-3">Our Difference</p>
             <h2 id="products-why-heading" className="font-display text-3xl md:text-4xl font-bold text-white mb-4">
-              Why Choose Apex Products?
+              Why Choose Puritan Products?
             </h2>
             <div className="gold-divider mx-auto" />
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {[
-              {
-                icon: "⚡",
-                title: "Fast Claims",
-                desc: "Industry-leading claims processing. Most settled within 5 business days.",
-              },
-              {
-                icon: "💰",
-                title: "Competitive Pricing",
-                desc: "Actuarially sound premiums. You never overpay for the risk we carry.",
-              },
-              {
-                icon: "🔒",
-                title: "Financial Strength",
-                desc: "Backed by top reinsurers. Your claims are safe regardless of scale.",
-              },
-              {
-                icon: "📱",
-                title: "Digital-First",
-                desc: "Buy, renew, and claim via M-Pesa, WhatsApp, or our web portal.",
-              },
-            ].map(({ icon, title, desc }) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+                  {
+                    icon: Shield,
+                    title: "Industry Specialization",
+                    desc: "Deep focus on the key industries of Construction, general trading, energy, manufacturing.",
+                  },
+                  {
+                    icon: Zap,
+                    title: "Proactive Risk Management",
+                    desc: "We undertake risk audit and advise on safety compliance to ensure business continuity. ",
+                  },
+                  {
+                    icon: HeartHandshake,
+                    title: "Claims Advocacy That Delivers ",
+                    desc: "structured claims escalation process that ensures speedy settlement.",
+                  },
+            ].map(({ icon: Icon, title, desc }) => (
               <div
                 key={title}
                 className="bg-white/8 border border-white/10 rounded-2xl p-6 hover:bg-white/12 transition-colors text-center group"
               >
-                <div className="text-3xl mb-3" aria-hidden="true">{icon}</div>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto flex-shrink-0 mt-0.5" aria-hidden="true">
+                <Icon size={32} className="text-navy-50" aria-hidden="true" />
+                </div>
                 <h3 className="font-semibold text-white mb-2">{title}</h3>
                 <p className="text-white/60 text-sm leading-relaxed">{desc}</p>
               </div>

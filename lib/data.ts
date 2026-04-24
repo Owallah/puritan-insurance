@@ -18,8 +18,8 @@ export const SITE_CONFIG = {
     "Kenya's most trusted insurance provider. Motor, health, life, marine, and commercial coverage — built around you.",
   phone: "+254 700 000 000",
   phoneTel: "+254700000000",
-  email: "info@apexinsurance.co.ke",
-  address: "Apex Tower, 4th Floor, Westlands, Nairobi, Kenya",
+  email: "info@Puritaninsurance.co.ke",
+  address: "Puritan Tower, 4th Floor, Westlands, Nairobi, Kenya",
   whatsapp: "2547XXXXXXXX",
   whatsappMessage: "Hello%20I%20need%20an%20insurance%20quote",
   googleMapsEmbedUrl:
@@ -158,7 +158,7 @@ export const SERVICES: InsuranceService[] = [
     shortDescription:
       "Secure your family's future with term life, whole life, and investment-linked policies.",
     description:
-      "Life insurance from Apex ensures your loved ones are financially protected in the event of your death or critical illness. Our flexible plans combine life cover with savings and investment components, helping you build wealth while protecting what matters most.",
+      "Life insurance from Puritan ensures your loved ones are financially protected in the event of your death or critical illness. Our flexible plans combine life cover with savings and investment components, helping you build wealth while protecting what matters most.",
     icon: "ShieldCheck",
     category: "life",
     popular: false,
@@ -480,7 +480,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "1",
     name: "James Mwangi",
     role: "Chief Executive Officer",
-    bio: "James brings 20+ years of insurance industry experience, having led major initiatives at AIG and Jubilee Insurance before co-founding Apex.",
+    bio: "James brings 20+ years of insurance industry experience, having led major initiatives at AIG and Jubilee Insurance before co-founding Puritan.",
   },
   {
     id: "2",
@@ -498,7 +498,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: "4",
     name: "Grace Wanjiru",
     role: "Head of Client Relations",
-    bio: "Grace leads a team of dedicated account managers, ensuring every Apex client feels valued, heard, and properly covered.",
+    bio: "Grace leads a team of dedicated account managers, ensuring every Puritan client feels valued, heard, and properly covered.",
   },
 ];
 
@@ -513,7 +513,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Business Owner",
     company: "Otieno Logistics Ltd",
     content:
-      "After my truck was involved in an accident on the Nairobi-Mombasa highway, Apex had my claim processed and vehicle repaired within 5 days. Absolutely outstanding service.",
+      "After my truck was involved in an accident on the Nairobi-Mombasa highway, Puritan had my claim processed and vehicle repaired within 5 days. Absolutely outstanding service.",
     rating: 5,
   },
   {
@@ -522,7 +522,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Homeowner",
     company: undefined,
     content:
-      "The fire and property cover saved my family when our kitchen caught fire. Apex's team was empathetic, professional, and incredibly fast. I recommend them to everyone.",
+      "The fire and property cover saved my family when our kitchen caught fire. Puritan's team was empathetic, professional, and incredibly fast. I recommend them to everyone.",
     rating: 5,
   },
   {
@@ -531,7 +531,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "HR Manager",
     company: "Tech Kenya Ltd",
     content:
-      "We've insured our entire staff of 200 employees with Apex's health plan. The hospital network is excellent and claims are processed without bureaucracy. Great value.",
+      "We've insured our entire staff of 200 employees with Puritan's health plan. The hospital network is excellent and claims are processed without bureaucracy. Great value.",
     rating: 5,
   },
 ];

@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
 import { TEAM_MEMBERS, SITE_CONFIG, values } from "@/lib/data";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -94,59 +95,63 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div className="relative hidden lg:block animate-fade-up animate-delay-300">
-              {/* Floating cards */}
-              <div className="relative w-full max-w-md mx-auto">
-                {/* Main card */}
-                <div className="bg-navy-900 backdrop-blur-sm border border-white/15 rounded-3xl p-8 shadow-navy-lg">
-                  <div className="text-center mb-8">
-                    <div className="w-20 h-20 bg-gold-gradient rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-gold-glow">
-                      <svg
-                        viewBox="0 0 32 32"
-                        fill="none"
-                        className="w-10 h-10"
-                        aria-hidden="true"
-                      >
-                        <path
-                          d="M16 2L4 8v8c0 7.73 5.12 14.93 12 16.93C22.88 30.93 28 23.73 28 16V8L16 2z"
-                          fill="#0a1849"
-                        />
-                        <path
-                          d="M11 16l3 3 7-7"
-                          stroke="#0a1849"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    </div>
-                    <h2 className="font-display text-2xl font-bold text-white mb-1">
-                      Puritan Insurance Agency
-                    </h2>
-                    <p className="text-gold-400 text-sm font-medium">
-                      Your Trusted Shield
-                    </p>
-                  </div>
+            {/* Image with gridlines overlay */}
+            <div className="relative w-full h-full aspect-video mx-0 mt-0 md:-mx-6 md:-mt-6 rounded-t-2xl overflow-hidden">
+              <Image
+                src="/pic2.webp"
+                alt="Puritan Insurance Agency team protecting Kenyan families and businesses since 2026"
+                fill
+                className="object-cover"
+                priority
+              />
 
-                  {/* Stats grid */}
-                  <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { label: "Clients", value: "50K+" },
-                      { label: "Claims Paid", value: "KES 2.8B" },
-                      { label: "Products", value: "8+" },
-                      { label: "Satisfaction", value: "98.4%" },
-                    ].map(({ label, value }) => (
-                      <div
-                        key={label}
-                        className="bg-white/8 rounded-xl p-4 text-center border border-white/10"
-                      >
-                        <div className="font-display text-2xl font-bold text-gold-400 leading-none mb-1">
-                          {value}
-                        </div>
-                        <div className="text-white/60 text-xs">{label}</div>
-                      </div>
-                    ))}
-                  </div>
+              {/* Grid pattern overlay */}
+              <div
+                className="absolute inset-0 opacity-[0.08] pointer-events-none"
+                style={{
+                  backgroundImage: `linear-gradient(rgba(255,255,255,0.8) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.8) 1px, transparent 1px)`,
+                  backgroundSize: "40px 40px",
+                }}
+              />
+
+              {/* Gradient overlay for better text readability */}
+              <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-navy-900/20 to-transparent" />
+
+              {/* Floating Statistics - Top Left */}
+              <div className="absolute top-4 left-4 bg-white/10 backdrop-blur-md rounded-lg px-3 py-2 border border-white/20">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
+                  <span className="text-gold-400 font-bold text-sm">50K+</span>
+                  <span className="text-white/70 text-xs">Clients</span>
+                </div>
+              </div>
+
+              {/* Floating Statistics - Top Right */}
+              <div className="absolute top-4 right-4 bg-white/10 backdrop-blur-md rounded-lg px-3 py-2 border border-white/20">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
+                  <span className="text-gold-400 font-bold text-sm">98.4%</span>
+                  <span className="text-white/70 text-xs">Satisfaction</span>
+                </div>
+              </div>
+
+              {/* Floating Statistics - Bottom Left */}
+              <div className="absolute bottom-4 left-4 bg-white/10 backdrop-blur-md rounded-lg px-3 py-2 border border-white/20">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
+                  <span className="text-gold-400 font-bold text-sm">24/7</span>
+                  <span className="text-white/70 text-xs">Support</span>
+                </div>
+              </div>
+
+              {/* Floating Statistics - Bottom Right */}
+              <div className="absolute bottom-4 right-4 bg-white/10 backdrop-blur-md rounded-lg px-3 py-2 border border-white/20">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-gold-400 rounded-full animate-pulse" />
+                  <span className="text-gold-400 font-bold text-sm">
+                    KES 2.8B
+                  </span>
+                  <span className="text-white/70 text-xs">Claims Paid</span>
                 </div>
               </div>
             </div>
@@ -324,14 +329,6 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            {/* <a
-              href="https://www.ira.go.ke"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary text-sm flex-shrink-0"
-            >
-              Verify License →
-            </a> */}
           </div>
         </div>
       </section>
