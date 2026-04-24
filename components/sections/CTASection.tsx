@@ -13,14 +13,14 @@ interface CTASectionProps {
 
 export function CTASection({
   title = "Ready to Get Protected?",
-  subtitle = "Join 50,000+ Kenyans and businesses who trust Apex Insurance. Get a personalized quote in minutes — no obligation, no hassle.",
+  subtitle = "Join 50,000+ Kenyans and businesses who trust Puritan Insurance Agency Ltd. Get a personalized quote in minutes — no obligation, no hassle.",
   primaryCta = { label: "Get a Free Quote", href: "/quote" },
   secondaryCta,
   variant = "navy",
 }: CTASectionProps) {
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    "Hello! I'd like to get an insurance quote from Apex Insurance Group."
+    "Hello! I'd like to get an insurance quote from Puritan Insurance Agency Ltd."
   );
 
   if (variant === "light") {

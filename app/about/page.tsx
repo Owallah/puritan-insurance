@@ -3,25 +3,23 @@ import {
   Shield,
   Target,
   Eye,
-  Users,
   Award,
-  Sparkles,
   Heart,
+  ShieldCheck,
+  Lock,
+  Lightbulb,
+  Clock,
 } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
-import {
-  TEAM_MEMBERS,
-  SITE_CONFIG,
-  values,
-} from "@/lib/data";
+import { TEAM_MEMBERS, SITE_CONFIG, values } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Learn about Apex Insurance Group — our history, mission, vision, core values, and the dedicated team serving Kenya since 2008.",
+    "Learn about Puritan Insurance Agency Ltd — our history, mission, vision, core values, and the dedicated team serving Kenya since 2026.",
 };
 
-const valueIcons = [Heart, Sparkles, Award, Users];
+const valueIcons = [ShieldCheck, Lock, Award, Lightbulb, Clock];
 
 export default function AboutPage() {
   return (
@@ -74,23 +72,24 @@ export default function AboutPage() {
                 <p>
                   {SITE_CONFIG.name} was founded in {SITE_CONFIG.yearFounded} by
                   a team of insurance professionals who believed the industry
-                  could do better. We saw clients struggling with lengthy claims
-                  processes, confusing policy language, and impersonal service —
-                  and we set out to change that.
+                  could do better. At Puritan Insurance Agency Ltd, we have an
+                  in-depth understanding of general, life, medical and liability
+                  covers from experience gained over the years.
                 </p>
                 <p>
-                  Today, we are one of Kenya's fastest-growing insurance
-                  providers, fully licensed by the Insurance Regulatory
-                  Authority (IRA), and trusted by over 50,000 clients across the
-                  country. Our portfolio spans motor, health, life, marine,
-                  fire, business, travel, and agricultural insurance.
+                  With this knowledge, we are able to adequately advise our
+                  customers on the insurance solutions available in the market.
+                  With this information, the customers is therefore able to make
+                  the right decision based on their individual needs and
+                  circumstances. We cater for corporate, institutional and
+                  individual customers linking them to top notch insurance
+                  companies.
                 </p>
                 <p>
-                  What sets us apart is not just our products — it's our people,
-                  our processes, and our promise. When you file a claim with
-                  Puritan, you'll hear from us within hours, not weeks. When you
-                  call us, a human answers. When we make a commitment, we keep
-                  it.
+                  What sets us apart is not just our products — Insurance is
+                  full of jargon and technical terms in fine prints. At Puritan,
+                  we break it down in simple language making it easy for you to
+                  understand the insurance contract.
                 </p>
               </div>
             </div>
@@ -149,13 +148,10 @@ export default function AboutPage() {
                     ))}
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
-
-        
       </section>
 
       {/* Mission & Vision */}
@@ -190,10 +186,9 @@ export default function AboutPage() {
                   Our Mission
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  To provide accessible, affordable, and reliable insurance
-                  solutions that empower every Kenyan to protect what they value
-                  most — with transparency, speed, and genuine care at every
-                  touchpoint.
+                  To provide tailored insurance solutions that protect
+                  enterprise value, strengthen resilience, and support
+                  sustainable growth for our corporate clients.
                 </p>
               </div>
             </div>
@@ -211,10 +206,8 @@ export default function AboutPage() {
                   Our Vision
                 </h3>
                 <p className="text-gray-600 leading-relaxed">
-                  To be East Africa's most customer-centric insurance provider —
-                  a company where clients feel genuinely protected, valued, and
-                  confident that we will be there when life takes an unexpected
-                  turn.
+                  To lead the transformation of corporate insurance in Kenya
+                  through innovation, analytics, and client-centric strategy.
                 </p>
               </div>
             </div>
@@ -242,22 +235,25 @@ export default function AboutPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((value, index) => {
-            const Icon = valueIcons[index] ?? Heart;
-            return (
-              <div key={value.id} className="card-base card-hover p-7 group">
-                <div className="text-3xl mb-4 grid h-12 w-12 place-items-center rounded-xl bg-navy-900 text-gold-50" aria-hidden="true">
-                <Icon className="h-6 w-6" />
+              const Icon = valueIcons[index] ?? Heart;
+              return (
+                <div key={value.id} className="card-base card-hover p-7 group">
+                  <div
+                    className="text-3xl mb-4 grid h-12 w-12 place-items-center rounded-xl bg-navy-900 text-gold-50"
+                    aria-hidden="true"
+                  >
+                    <Icon className="h-6 w-6" />
+                  </div>
+                  <div className="gold-divider mb-4 w-10 h-0.5 group-hover:w-16 transition-all duration-500" />
+                  <h3 className="font-semibold text-navy-900 text-lg mb-2">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {value.description}
+                  </p>
                 </div>
-                <div className="gold-divider mb-4 w-10 h-0.5 group-hover:w-16 transition-all duration-500" />
-                <h3 className="font-semibold text-navy-900 text-lg mb-2">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            )
-      })}
+              );
+            })}
           </div>
         </div>
       </section>
@@ -328,14 +324,14 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
-            <a
+            {/* <a
               href="https://www.ira.go.ke"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary text-sm flex-shrink-0"
             >
               Verify License →
-            </a>
+            </a> */}
           </div>
         </div>
       </section>

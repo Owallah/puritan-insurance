@@ -12,7 +12,7 @@ import type {
 // ─────────────────────────────────────────────
 
 export const SITE_CONFIG = {
-  name: "Puritan Insurance Agency",
+  name: "Puritan Insurance Agency Ltd",
   tagline: "Protecting What Matters Most",
   description:
     "Kenya's most trusted insurance provider. Motor, health, life, marine, and commercial coverage — built around you.",
@@ -25,13 +25,13 @@ export const SITE_CONFIG = {
   googleMapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.818744583629!2d36.8063!3d-1.2700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTYnMTIuMCJTIDM2wrA0OCcyMi43IkU!5e0!3m2!1sen!2ske!4v1234567890",
   socialLinks: {
-    facebook: "https://facebook.com/apexinsurance",
-    twitter: "https://twitter.com/apexinsurance",
-    linkedin: "https://linkedin.com/company/apexinsurance",
-    instagram: "https://instagram.com/apexinsurance",
+    facebook: "https://facebook.com/puritaninsurance",
+    twitter: "https://twitter.com/puritaninsurance",
+    linkedin: "https://linkedin.com/company/puritaninsurance",
+    instagram: "https://instagram.com/puritaninsurance",
   },
-  registrationNo: "IRA/LIC/2024/001",
-  yearFounded: 2008,
+  registrationNo: "[IRA/05/16046/2026]",
+  yearFounded: 2026,
 } as const;
 
 // ─────────────────────────────────────────────
@@ -71,11 +71,35 @@ export const SERVICES: InsuranceService[] = [
       "No-claims bonus discount",
     ],
     premium: [
-      { id: "motor-1", name: "Comprehensive Private Car", amount: 25000, period: "annually", description: "For private vehicles up to 2000cc" },
-      { id: "motor-2", name: "Comprehensive Private Car", amount: 2300, period: "monthly", description: "Monthly payment option" },
-      { id: "motor-3", name: "Third Party Only", amount: 5500, period: "annually", description: "Basic third party coverage" },
-      { id: "motor-4", name: "Third Party + Fire & Theft", amount: 12000, period: "annually", description: "Extended third party coverage" },
-    ]
+      {
+        id: "motor-1",
+        name: "Comprehensive Private Car",
+        amount: 25000,
+        period: "annually",
+        description: "For private vehicles up to 2000cc",
+      },
+      {
+        id: "motor-2",
+        name: "Comprehensive Private Car",
+        amount: 2300,
+        period: "monthly",
+        description: "Monthly payment option",
+      },
+      {
+        id: "motor-3",
+        name: "Third Party Only",
+        amount: 5500,
+        period: "annually",
+        description: "Basic third party coverage",
+      },
+      {
+        id: "motor-4",
+        name: "Third Party + Fire & Theft",
+        amount: 12000,
+        period: "annually",
+        description: "Extended third party coverage",
+      },
+    ],
   },
   {
     id: "health",
@@ -97,11 +121,35 @@ export const SERVICES: InsuranceService[] = [
       "Emergency evacuation",
     ],
     premium: [
-      { id: "health-1", name: "Individual Plan - Standard", amount: 15000, period: "annually", description: "Individual coverage for 1 adult" },
-      { id: "health-2", name: "Individual Plan", amount: 1250, period: "monthly", description: "Monthly payment option" },
-      { id: "health-3", name: "Family Plan - 2 Adults + 2 Children", amount: 45000, period: "annually", description: "Comprehensive family coverage" },
-      { id: "health-4", name: "Senior Citizen Plan", amount: 35000, period: "annually", description: "For adults aged 60+" },
-    ]
+      {
+        id: "health-1",
+        name: "Individual Plan - Standard",
+        amount: 15000,
+        period: "annually",
+        description: "Individual coverage for 1 adult",
+      },
+      {
+        id: "health-2",
+        name: "Individual Plan",
+        amount: 1250,
+        period: "monthly",
+        description: "Monthly payment option",
+      },
+      {
+        id: "health-3",
+        name: "Family Plan - 2 Adults + 2 Children",
+        amount: 45000,
+        period: "annually",
+        description: "Comprehensive family coverage",
+      },
+      {
+        id: "health-4",
+        name: "Senior Citizen Plan",
+        amount: 35000,
+        period: "annually",
+        description: "For adults aged 60+",
+      },
+    ],
   },
   {
     id: "life",
@@ -123,11 +171,35 @@ export const SERVICES: InsuranceService[] = [
       "Education fund rider",
     ],
     premium: [
-      { id: "life-1", name: "Term Life - 5M Cover", amount: 8500, period: "annually", description: "5 Million KES coverage for 20 years" },
-      { id: "life-2", name: "Term Life - 5M Cover", amount: 750, period: "monthly", description: "Monthly payment option" },
-      { id: "life-3", name: "Whole Life - 2M Cover", amount: 25000, period: "annually", description: "Lifetime coverage with cash value" },
-      { id: "life-4", name: "Education Plan", amount: 15000, period: "annually", description: "For your child's university education" },
-    ]
+      {
+        id: "life-1",
+        name: "Term Life - 5M Cover",
+        amount: 8500,
+        period: "annually",
+        description: "5 Million KES coverage for 20 years",
+      },
+      {
+        id: "life-2",
+        name: "Term Life - 5M Cover",
+        amount: 750,
+        period: "monthly",
+        description: "Monthly payment option",
+      },
+      {
+        id: "life-3",
+        name: "Whole Life - 2M Cover",
+        amount: 25000,
+        period: "annually",
+        description: "Lifetime coverage with cash value",
+      },
+      {
+        id: "life-4",
+        name: "Education Plan",
+        amount: 15000,
+        period: "annually",
+        description: "For your child's university education",
+      },
+    ],
   },
   {
     id: "marine",
@@ -149,9 +221,21 @@ export const SERVICES: InsuranceService[] = [
       "Claims at destination port",
     ],
     premium: [
-      { id: "marine-1", name: "Cargo Cover - Basic", amount: 0.5, period: "annually", description: "0.5% of cargo value - minimum KES 5,000" },
-      { id: "marine-2", name: "All Risk Cover", amount: 1.0, period: "annually", description: "1% of cargo value - minimum KES 10,000" },
-    ]
+      {
+        id: "marine-1",
+        name: "Cargo Cover - Basic",
+        amount: 0.5,
+        period: "annually",
+        description: "0.5% of cargo value - minimum KES 5,000",
+      },
+      {
+        id: "marine-2",
+        name: "All Risk Cover",
+        amount: 1.0,
+        period: "annually",
+        description: "1% of cargo value - minimum KES 10,000",
+      },
+    ],
   },
   {
     id: "fire-property",
@@ -173,10 +257,28 @@ export const SERVICES: InsuranceService[] = [
       "Rent loss cover",
     ],
     premium: [
-      { id: "fire-1", name: "Home Content Cover - 1M", amount: 8500, period: "annually", description: "For contents up to 1 Million KES" },
-      { id: "fire-2", name: "Home Building - 5M", amount: 15000, period: "annually", description: "Building structure coverage" },
-      { id: "fire-3", name: "Commercial Property - 10M", amount: 45000, period: "annually", description: "For business properties" },
-    ]
+      {
+        id: "fire-1",
+        name: "Home Content Cover - 1M",
+        amount: 8500,
+        period: "annually",
+        description: "For contents up to 1 Million KES",
+      },
+      {
+        id: "fire-2",
+        name: "Home Building - 5M",
+        amount: 15000,
+        period: "annually",
+        description: "Building structure coverage",
+      },
+      {
+        id: "fire-3",
+        name: "Commercial Property - 10M",
+        amount: 45000,
+        period: "annually",
+        description: "For business properties",
+      },
+    ],
   },
   {
     id: "business",
@@ -198,10 +300,28 @@ export const SERVICES: InsuranceService[] = [
       "Directors & officers cover",
     ],
     premium: [
-      { id: "business-1", name: "Public Liability - 2M", amount: 18000, period: "annually", description: "Liability cover up to 2M KES" },
-      { id: "business-2", name: "Workmen's Comp - Basic", amount: 12000, period: "annually", description: "For up to 5 employees" },
-      { id: "business-3", name: "Combined Commercial Package", amount: 75000, period: "annually", description: "Comprehensive business coverage" },
-    ]
+      {
+        id: "business-1",
+        name: "Public Liability - 2M",
+        amount: 18000,
+        period: "annually",
+        description: "Liability cover up to 2M KES",
+      },
+      {
+        id: "business-2",
+        name: "Workmen's Comp - Basic",
+        amount: 12000,
+        period: "annually",
+        description: "For up to 5 employees",
+      },
+      {
+        id: "business-3",
+        name: "Combined Commercial Package",
+        amount: 75000,
+        period: "annually",
+        description: "Comprehensive business coverage",
+      },
+    ],
   },
   {
     id: "travel",
@@ -223,10 +343,28 @@ export const SERVICES: InsuranceService[] = [
       "Adventure sports add-on",
     ],
     premium: [
-      { id: "travel-1", name: "Single Trip - Regional", amount: 3500, period: "annually", description: "For East Africa travel, up to 14 days" },
-      { id: "travel-2", name: "Single Trip - International", amount: 7500, period: "annually", description: "Worldwide coverage, up to 30 days" },
-      { id: "travel-3", name: "Annual Multi-Trip", amount: 25000, period: "annually", description: "Unlimited trips per year" },
-    ]
+      {
+        id: "travel-1",
+        name: "Single Trip - Regional",
+        amount: 3500,
+        period: "annually",
+        description: "For East Africa travel, up to 14 days",
+      },
+      {
+        id: "travel-2",
+        name: "Single Trip - International",
+        amount: 7500,
+        period: "annually",
+        description: "Worldwide coverage, up to 30 days",
+      },
+      {
+        id: "travel-3",
+        name: "Annual Multi-Trip",
+        amount: 25000,
+        period: "annually",
+        description: "Unlimited trips per year",
+      },
+    ],
   },
   {
     id: "agriculture",
@@ -248,10 +386,28 @@ export const SERVICES: InsuranceService[] = [
       "Agri-business liability",
     ],
     premium: [
-      { id: "agri-1", name: "Crop Cover - 1 Acre", amount: 3500, period: "annually", description: "For maize/beans per growing season" },
-      { id: "agri-2", name: "Crop Cover - 5+ Acres", amount: 3000, period: "annually", description: "Per acre, volume discount" },
-      { id: "agri-3", name: "Livestock - Per Animal", amount: 2500, period: "annually", description: "Per cow/goat/sheep" },
-    ]
+      {
+        id: "agri-1",
+        name: "Crop Cover - 1 Acre",
+        amount: 3500,
+        period: "annually",
+        description: "For maize/beans per growing season",
+      },
+      {
+        id: "agri-2",
+        name: "Crop Cover - 5+ Acres",
+        amount: 3000,
+        period: "annually",
+        description: "Per acre, volume discount",
+      },
+      {
+        id: "agri-3",
+        name: "Livestock - Per Animal",
+        amount: 2500,
+        period: "annually",
+        description: "Per cow/goat/sheep",
+      },
+    ],
   },
 ];
 
@@ -282,42 +438,35 @@ export const values: CompanyValue[] = [
     id: "integrity",
     title: "Integrity",
     description:
-      "We operate with unwavering transparency and honesty in every interaction — from policy terms to claims settlements.",
+      "We uphold the highest ethical standards, ensuring transparency, honesty, and accountability in every client engagement.",
     icon: "🤝",
   },
   {
-    id: "customer-first",
-    title: "Customer First",
+    id: "confidentiality",
+    title: "Confidentiality & Discretion",
     description:
-      "Every decision we make is guided by what's best for our clients. Your peace of mind is our greatest success metric.",
+      "We handle all client information with the utmost confidentiality, respecting the sensitivity of high-value corporate engagements.",
     icon: "💛",
   },
   {
-    id: "innovation",
-    title: "Innovation",
+    id: "expertise",
+    title: "Expertise & Profssional Mastery",
     description:
-      "We leverage technology and data to create smarter, faster, and more accessible insurance solutions for modern Kenya.",
+      "We bring deep industry knowledge, technical skill, and continuous learning to provide sound, strategic insurance advice.",
     icon: "💡",
   },
   {
-    id: "excellence",
-    title: "Excellence",
+    id: "innovation",
+    title: "Innovation & Forward Thinking",
     description:
-      "We set and maintain the highest standards in underwriting, claims handling, and customer service.",
-    icon: "🏆",
-  },
-  {
-    id: "community",
-    title: "Community",
-    description:
-      "We invest in the communities we serve through financial literacy programs and support for vulnerable populations.",
+      "We embrace data, technology, and evolving market insights to design modern, relevant risk solutions.",
     icon: "🌍",
   },
   {
     id: "reliability",
-    title: "Reliability",
+    title: "Reliability & Responsiveness",
     description:
-      "When it matters most, we show up. Our 24/7 support and fast-track claims ensure you're never left stranded.",
+      "We are dependable partners—acting promptly, decisively, and consistently when our clients need us most.",
     icon: "🛡️",
   },
 ];
