@@ -41,9 +41,8 @@ export default function AboutPage() {
           </h1>
           <div className="gold-divider mx-auto mb-6" />
           <p className="text-white/65 text-lg max-w-2xl mx-auto leading-relaxed">
-            Since {SITE_CONFIG.yearFounded}, we've been Kenya's trusted partner
-            in protection, providing peace of mind to individuals, families, and
-            businesses across the country.
+            Kenya's trusted partner in protection, providing peace of mind to
+            individuals, families, and businesses across the country.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
@@ -264,7 +263,7 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section
+      {/* <section
         className="section-padding bg-navy-950"
         aria-labelledby="team-heading"
       >
@@ -285,16 +284,16 @@ export default function AboutPage() {
               <div
                 key={member.id}
                 className="bg-white/8 border border-white/10 rounded-2xl p-6 text-center hover:bg-white/12 hover:border-gold-500/30 transition-all duration-300 group"
-              >
+              > */}
                 {/* Avatar */}
-                <div className="w-16 h-16 bg-gold-gradient rounded-2xl flex items-center justify-center mx-auto mb-4 text-navy-900 font-display text-2xl font-bold shadow-gold-glow group-hover:scale-105 transition-transform">
+                {/* <div className="w-16 h-16 bg-gold-gradient rounded-2xl flex items-center justify-center mx-auto mb-4 text-navy-900 font-display text-2xl font-bold shadow-gold-glow group-hover:scale-105 transition-transform">
                   {member.name
                     .split(" ")
                     .map((n) => n[0])
                     .join("")
                     .slice(0, 2)}
-                </div>
-                <h3 className="font-semibold text-white mb-1">{member.name}</h3>
+                </div> */}
+                {/* <h3 className="font-semibold text-white mb-1">{member.name}</h3>
                 <p className="text-gold-400 text-xs font-medium mb-3">
                   {member.role}
                 </p>
@@ -305,7 +304,7 @@ export default function AboutPage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* IRA License Banner */}
       <section className="py-12 bg-white border-y border-gray-100">

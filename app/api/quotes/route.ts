@@ -1,3 +1,4 @@
+import { sendQuoteRequestNotification } from "@/lib/email";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -90,12 +91,13 @@ export async function POST(request: NextRequest) {
     // ─────────────────────────────────────────────────────────────────────────
 
     // STUB: Log to console until Supabase is connected
-    console.log("[Quote Request]", {
-      referenceId,
-      name: parsed.data.fullName,
+    await sendQuoteRequestNotification({
+      fullName: parsed.data.fullName,
       email: parsed.data.email,
+      phone: parsed.data.phone,
       insuranceType: parsed.data.insuranceType,
-      timestamp: new Date().toISOString(),
+      message: parsed.data.message,
+      referenceId,
     });
 
     return NextResponse.json(

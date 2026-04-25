@@ -5,8 +5,11 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, Loader2, AlertCircle, Send } from "lucide-react";
 import { contactFormSchema, type ContactFormSchema } from "@/lib/validations";
-import { submitContactForm } from "@/lib/utils";
-import { FormInput, FormSelect, FormTextarea } from "@/components/ui/FormFields";
+import {
+  FormInput,
+  FormSelect,
+  FormTextarea,
+} from "@/components/ui/FormFields";
 import type { ContactSubmissionResult } from "@/types";
 
 const SUBJECTS = [
@@ -40,7 +43,11 @@ export function ContactForm() {
 
   const onSubmit = async (data: ContactFormSchema) => {
     try {
-      const res = await submitContactForm(data);
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }).then((r) => r.json());
       setResult(res);
       if (res.success) reset();
     } catch {
@@ -76,8 +83,15 @@ export function ContactForm() {
       aria-label="Contact form"
     >
       {result && !result.success && (
-        <div role="alert" className="flex items-start gap-3 bg-red-50 border border-red-200 rounded-lg p-4">
-          <AlertCircle size={16} className="text-red-500 mt-0.5 flex-shrink-0" aria-hidden="true" />
+        <div
+          role="alert"
+          className="flex items-start gap-3 bg-red-50 border border-red-200 rounded-lg p-4"
+        >
+          <AlertCircle
+            size={16}
+            className="text-red-500 mt-0.5 flex-shrink-0"
+            aria-hidden="true"
+          />
           <p className="text-red-700 text-sm">{result.message}</p>
         </div>
       )}

@@ -210,3 +210,106 @@ export async function sendPaymentReceipt(payment: PaymentRecord): Promise<void> 
     console.error("[sendPaymentReceipt] Resend error:", error);
   }
 }
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Quote request notification — sent to the agency inbox
+// ─────────────────────────────────────────────────────────────────────────────
+
+export async function sendQuoteRequestNotification(data: {
+  fullName: string;
+  email: string;
+  phone: string;
+  insuranceType: string;
+  message: string;
+  referenceId: string;
+}): Promise<void> {
+  const { error } = await resend.emails.send({
+    from: `${SITE_NAME} <${FROM_ADDRESS}>`,
+    to: REPLY_TO,
+    replyTo: data.email,
+    subject: `[Quote Request] ${data.insuranceType} — ${data.referenceId}`,
+    html: `
+      <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:32px;">
+        <h2 style="color:#0a1849;margin-bottom:4px;">New Quote Request</h2>
+        <p style="color:#6b7280;margin-top:0;">Reference: <strong>${data.referenceId}</strong></p>
+        <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;" />
+        <table style="width:100%;border-collapse:collapse;">
+          ${[
+            ["Name", data.fullName],
+            ["Email", data.email],
+            ["Phone", data.phone],
+            ["Insurance Type", data.insuranceType],
+          ]
+            .map(
+              ([label, value]) => `
+            <tr>
+              <td style="padding:8px 0;color:#6b7280;font-size:14px;width:160px;">${label}</td>
+              <td style="padding:8px 0;color:#111827;font-size:14px;font-weight:600;">${value}</td>
+            </tr>`
+            )
+            .join("")}
+        </table>
+        <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;" />
+        <p style="color:#6b7280;font-size:13px;margin-bottom:6px;">Message</p>
+        <p style="color:#111827;font-size:15px;line-height:1.6;white-space:pre-wrap;">${data.message}</p>
+        <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;" />
+        <p style="color:#9ca3af;font-size:12px;">
+          Submitted ${new Date().toLocaleString("en-KE", { timeZone: "Africa/Nairobi" })}
+        </p>
+      </div>
+    `,
+  });
+
+  if (error) console.error("[sendQuoteRequestNotification] Resend error:", error);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Contact form notification — sent to the agency inbox
+// ─────────────────────────────────────────────────────────────────────────────
+
+export async function sendContactFormNotification(data: {
+  fullName: string;
+  email: string;
+  phone?: string;
+  subject: string;
+  message: string;
+}): Promise<void> {
+  const { error } = await resend.emails.send({
+    from: `${SITE_NAME} <${FROM_ADDRESS}>`,
+    to: REPLY_TO,
+    replyTo: data.email,
+    subject: `[Contact] ${data.subject}`,
+    html: `
+      <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:32px;">
+        <h2 style="color:#0a1849;margin-bottom:4px;">New Contact Form Message</h2>
+        <p style="color:#6b7280;margin-top:0;">Via puritaninsurance.co.ke</p>
+        <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;" />
+        <table style="width:100%;border-collapse:collapse;">
+          ${[
+            ["Name", data.fullName],
+            ["Email", data.email],
+            ["Phone", data.phone || "Not provided"],
+            ["Subject", data.subject],
+          ]
+            .map(
+              ([label, value]) => `
+            <tr>
+              <td style="padding:8px 0;color:#6b7280;font-size:14px;width:160px;">${label}</td>
+              <td style="padding:8px 0;color:#111827;font-size:14px;font-weight:600;">${value}</td>
+            </tr>`
+            )
+            .join("")}
+        </table>
+        <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;" />
+        <p style="color:#6b7280;font-size:13px;margin-bottom:6px;">Message</p>
+        <p style="color:#111827;font-size:15px;line-height:1.6;white-space:pre-wrap;">${data.message}</p>
+        <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;" />
+        <p style="color:#9ca3af;font-size:12px;">
+          Submitted ${new Date().toLocaleString("en-KE", { timeZone: "Africa/Nairobi" })}
+        </p>
+      </div>
+    `,
+  });
+
+  if (error) console.error("[sendContactFormNotification] Resend error:", error);
+}

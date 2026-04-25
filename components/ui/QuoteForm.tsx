@@ -5,9 +5,12 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CheckCircle2, Loader2, AlertCircle, Send } from "lucide-react";
 import { quoteFormSchema, type QuoteFormSchema } from "@/lib/validations";
-import { submitQuoteRequest } from "@/lib/utils";
 import { INSURANCE_TYPES } from "@/lib/data";
-import { FormInput, FormSelect, FormTextarea } from "@/components/ui/FormFields";
+import {
+  FormInput,
+  FormSelect,
+  FormTextarea,
+} from "@/components/ui/FormFields";
 import type { QuoteSubmissionResult } from "@/types";
 
 export function QuoteForm() {
@@ -32,16 +35,19 @@ export function QuoteForm() {
 
   const onSubmit = async (data: QuoteFormSchema) => {
     try {
-      const result = await submitQuoteRequest(data);
-      setSubmissionResult(result);
-      if (result.success) {
+      const res = await fetch("/api/quotes", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }).then((r) => r.json());
+      setSubmissionResult(res);
+      if (res.success) {
         reset();
       }
     } catch {
       setSubmissionResult({
         success: false,
-        message:
-          "Something went wrong. Please try again or call us directly.",
+        message: "Something went wrong. Please try again or call us directly.",
       });
     }
   };
@@ -138,7 +144,10 @@ export function QuoteForm() {
         label="Insurance Type"
         placeholder="— Select an insurance type —"
         required
-        options={INSURANCE_TYPES.map((t) => ({ value: t.value, label: t.label }))}
+        options={INSURANCE_TYPES.map((t) => ({
+          value: t.value,
+          label: t.label,
+        }))}
         error={errors.insuranceType?.message}
         {...register("insuranceType")}
       />

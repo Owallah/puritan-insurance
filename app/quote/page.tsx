@@ -7,13 +7,13 @@ import { buildWhatsAppUrl } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Get a Free Insurance Quote",
   description:
-    "Request a personalized insurance quote from Apex Insurance Group. Motor, health, life, marine and more. We respond within 2 hours.",
+    "Request a personalized insurance quote from Puritan Insurance Agency Ltd. Motor, health, life, marine and more. We respond within 2 hours.",
 };
 
 export default function QuotePage() {
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
-    "Hello! I need an insurance quote from Apex Insurance Group."
+    "Hello! I need an insurance quote from Puritan Insurance Agency Ltd."
   );
 
   return (
@@ -31,7 +31,7 @@ export default function QuotePage() {
           <div className="gold-divider mx-auto mb-5" />
           <p className="text-white/65 text-lg max-w-xl mx-auto">
             Fill in the form below and our advisors will prepare a tailored quote for
-            you — usually within 2 business hours.
+            you — usually within 24 business hours.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
@@ -67,7 +67,7 @@ export default function QuotePage() {
                     {
                       step: "3",
                       title: "Review & Accept",
-                      desc: "We'll reach out within 2 hours with your personalized quote.",
+                      desc: "We'll reach out within 24 hours with your personalized quote.",
                     },
                     {
                       step: "4",
@@ -100,7 +100,7 @@ export default function QuotePage() {
                     Fast Response Guaranteed
                   </p>
                   <p className="text-green-700 text-xs leading-relaxed mt-0.5">
-                    All quote requests are responded to within <strong>2 business hours</strong> during
+                    All quote requests are responded to within <strong>24 business hours</strong> during
                     Mon–Fri 8am–6pm.
                   </p>
                 </div>

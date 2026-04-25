@@ -44,22 +44,6 @@ export async function submitQuoteRequest(
   };
 }
 
-export async function submitContactForm(
-  data: ContactFormData
-): Promise<ContactSubmissionResult> {
-  // FUTURE: Replace with Supabase insert or email service (e.g., Resend)
-  // const { error } = await supabase
-  //   .from('contact_submissions')
-  //   .insert([{ ...data, created_at: new Date().toISOString() }]);
-
-  await new Promise((resolve) => setTimeout(resolve, 1200));
-
-  return {
-    success: true,
-    message: "Your message has been sent. We'll get back to you within 24 hours.",
-  };
-}
-
 // ─────────────────────────────────────────────
 // Format Utilities
 // ─────────────────────────────────────────────
@@ -94,6 +78,6 @@ export function buildWhatsAppUrl(phone: string, message: string): string {
 // SEO Helpers
 // ─────────────────────────────────────────────
 
-export function buildPageTitle(pageTitle: string, siteName = "Apex Insurance Group"): string {
+export function buildPageTitle(pageTitle: string, siteName = "Puritan Insurance Agency Ltd"): string {
   return `${pageTitle} | ${siteName}`;
 }

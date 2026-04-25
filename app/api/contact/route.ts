@@ -1,3 +1,5 @@
+import { sendContactFormNotification } from "@/lib/email";
+import { log } from "console";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 
@@ -62,17 +64,19 @@ export async function POST(request: NextRequest) {
     // ─────────────────────────────────────────────────────────────────────────
 
     // STUB: Log to console until email service is connected
-    console.log("[Contact Form]", {
-      name: parsed.data.fullName,
+    await sendContactFormNotification({
+      fullName: parsed.data.fullName,
       email: parsed.data.email,
+      phone: parsed.data.phone,
       subject: parsed.data.subject,
-      timestamp: new Date().toISOString(),
+      message: parsed.data.message,
     });
 
     return NextResponse.json(
       {
         success: true,
-        message: "Your message has been sent. We'll get back to you within 24 hours.",
+        message:
+          "Your message has been sent. We'll get back to you within 24 hours.",
       },
       { status: 200 }
     );
