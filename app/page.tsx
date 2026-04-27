@@ -4,7 +4,8 @@ import { ArrowRight, Shield, Zap, HeartHandshake, CheckCircle2, Star, Headphones
 import { HeroSection } from "@/components/sections/HeroSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { ServiceCard } from "@/components/ui/ServiceCard";
-import { SERVICES, TRUST_INDICATORS, values, TESTIMONIALS } from "@/lib/data";
+import { TRUST_INDICATORS, values, TESTIMONIALS } from "@/lib/data";
+import { ALL_PRODUCTS } from "@/lib/services";
 
 export const metadata: Metadata = {
   title: "Apex Insurance Group — Protecting What Matters Most",
@@ -15,8 +16,8 @@ export const metadata: Metadata = {
 const trustIcons = [ShieldCheck, Zap, Users, Headphones];
 
 export default function HomePage() {
-  const featuredServices = SERVICES.filter((s) => s.popular);
-  const allServices = SERVICES.slice(0, 6);
+  const featuredServices = ALL_PRODUCTS.filter((s) => s.popular).slice(0, 6);
+  const allServices = ALL_PRODUCTS.slice(0, 6);
 
   return (
     <>

@@ -8,11 +8,12 @@ import {
   Linkedin,
   Instagram,
 } from "lucide-react";
-import { SITE_CONFIG, SERVICES, NAV_LINKS } from "@/lib/data";
+import { SITE_CONFIG, NAV_LINKS } from "@/lib/data";
 import Image from "next/image";
+import { ALL_PRODUCTS } from "@/lib/services";
 
 export function Footer() {
-  const serviceLinks = SERVICES.slice(0, 6);
+  const serviceLinks = ALL_PRODUCTS.slice(0, 6);
   const currentYear = new Date().getFullYear();
 
   return (

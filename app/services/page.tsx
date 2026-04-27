@@ -3,8 +3,10 @@ import Link from "next/link";
 import { ArrowRight, HeartHandshake, Shield, Zap } from "lucide-react";
 import { CTASection } from "@/components/sections/CTASection";
 import { ServiceCard } from "@/components/ui/ServiceCard";
-import { SERVICES } from "@/lib/data";
+
 import type { ServiceCategory } from "@/types";
+import { getProductsByCategory } from "@/lib/services";
+import { group } from "console";
 
 export const metadata: Metadata = {
   title: "Our Insurance Services",
@@ -13,38 +15,28 @@ export const metadata: Metadata = {
 };
 
 const CATEGORY_LABELS: Record<ServiceCategory, string> = {
-  personal: "Personal Insurance",
-  commercial: "Commercial Insurance",
-  life: "Life & Investment",
-  specialty: "Specialty Lines",
-  contractors: "Contractors All Risk",
-  liability: "Liability and Personal Accident",
-  property: "Property and Accident",
-  motor: "Motor Commercial and Private",
-  marine: "Marine and Transit Insurance",
+  liability: "Liability Covers",
+  property: "Property Insurance",
+  people: "People Insurance",
+  personal: "Personal Lines",
 };
 
 const CATEGORY_DESCRIPTIONS: Record<ServiceCategory, string> = {
   personal: "Protect yourself and your family",
-  commercial: "Safeguard your business assets",
-  life: "Secure your financial future",
-  specialty: "Industry-specific solutions",
-  contractors: "This covers those in construction or long-term contracts for the benefit of the employer",
   liability: "This covers liabilities arising from accidental injury to the general public from the use of property or premises. It includes statutory covers such as WIBA.",
   property: "This cover damage to property and goods thereon against accidental damage by fire and related perils. The cover includes consequential loss following the property damage.",
-  motor: "This covers motor vehicles for commercial and private use.",
-  marine: "This covers shipment of goods for both local and international trade.",
+  people: "Protect your greatest asset — your employees and their well-being",
 };
 
-const CATEGORIES: ServiceCategory[] = ["personal", "life", "commercial", "specialty", "contractors", "liability", "property", "motor", "marine"];
+const CATEGORIES: ServiceCategory[] = ["personal",  "liability", "property", "liability"];
 
 export default function ServicesPage() {
   const servicesByCategory = CATEGORIES.map((cat) => ({
     category: cat,
     label: CATEGORY_LABELS[cat],
     description: CATEGORY_DESCRIPTIONS[cat],
-    services: SERVICES.filter((s) => s.category === cat),
-  })).filter((group) => group.services.length > 0);
+    services: getProductsByCategory(cat),
+  })).filter((group) => group.services.length > 0)
 
   return (
     <>
