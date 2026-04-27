@@ -6,6 +6,7 @@ import type {
   TrustIndicator,
   NavLink,
 } from "@/types";
+import { ALL_PRODUCTS } from "./services";
 
 // ─────────────────────────────────────────────
 // Site Configuration
@@ -541,13 +542,9 @@ export const TESTIMONIALS: Testimonial[] = [
 // ─────────────────────────────────────────────
 
 export const INSURANCE_TYPES = [
-  { value: "motor", label: "Motor Insurance" },
-  { value: "health", label: "Health Insurance" },
-  { value: "life", label: "Life Insurance" },
-  { value: "marine", label: "Marine Insurance" },
-  { value: "fire-property", label: "Fire & Property" },
-  { value: "business", label: "Business Insurance" },
-  { value: "travel", label: "Travel Insurance" },
-  { value: "agriculture", label: "Agriculture Insurance" },
-  { value: "other", label: "Other / Not Sure" },
+  ...ALL_PRODUCTS.map(product => ({
+    value: product.id,
+    label: product.title,
+  })),
+  { value: "other", label: "Other / Not Sure — Let Us Advise You" },
 ] as const;

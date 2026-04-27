@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
 import { CheckCircle2, Clock, Phone, MessageCircle } from "lucide-react";
 import { QuoteForm } from "@/components/ui/QuoteForm";
-import { SITE_CONFIG, SERVICES } from "@/lib/data";
+import { SITE_CONFIG } from "@/lib/data";
 import { buildWhatsAppUrl } from "@/lib/utils";
+import { ALL_PRODUCTS } from "@/lib/services";
+import { title } from "process";
+import { PRODUCT_CLASSES } from "@/lib/service-categories";
 
 export const metadata: Metadata = {
   title: "Get a Free Insurance Quote",
@@ -10,11 +13,15 @@ export const metadata: Metadata = {
     "Request a personalized insurance quote from Puritan Insurance Agency Ltd. Motor, health, life, marine and more. We respond within 2 hours.",
 };
 
+const ALL_PRODUCT_TITLES = ALL_PRODUCTS.map(p => p.title);
 export default function QuotePage() {
   const whatsappUrl = buildWhatsAppUrl(
     SITE_CONFIG.whatsapp,
     "Hello! I need an insurance quote from Puritan Insurance Agency Ltd."
   );
+
+  console.log(PRODUCT_CLASSES);
+  
 
   return (
     <>
@@ -190,13 +197,13 @@ export default function QuotePage() {
             We Cover All Major Insurance Types
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
-            {SERVICES.map((service) => (
+            {ALL_PRODUCT_TITLES.map((service) => (
               <div
-                key={service.id}
+                key={service}
                 className="flex items-center gap-2 bg-white border border-gray-200 rounded-full px-4 py-2 text-sm text-gray-700 shadow-sm"
               >
-                <span aria-hidden="true">{service.icon}</span>
-                {service.title}
+                {/* <span aria-hidden="true">{service.icon}</span> */}
+                {service}
               </div>
             ))}
           </div>

@@ -12,7 +12,17 @@ import {
   FormTextarea,
 } from "@/components/ui/FormFields";
 import type { QuoteSubmissionResult } from "@/types";
+import { PRODUCT_CLASSES } from "@/lib/service-categories";
+import { ALL_PRODUCTS } from "@/lib/services";
 
+
+const PRODUCT_CLASS_OPTIONS = Object.entries(PRODUCT_CLASSES).map(([id, info]) => {
+  const productCount = ALL_PRODUCTS.filter(p => p.category === id).length;
+  return {
+    value: id,
+    label: `${info.title}`,
+  };
+});
 export function QuoteForm() {
   const [submissionResult, setSubmissionResult] =
     useState<QuoteSubmissionResult | null>(null);
