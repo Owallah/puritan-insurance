@@ -119,10 +119,10 @@ export default async function AboutPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-navy-900/20 to-transparent" />
 
               {[
-                { pos: "top-4 left-4",     value: "50K+",     label: "Clients"       },
-                { pos: "top-4 right-4",    value: "98.4%",    label: "Satisfaction"  },
-                { pos: "bottom-4 left-4",  value: "24/7",     label: "Support"       },
-                { pos: "bottom-4 right-4", value: "KES 2.8B", label: "Claims Paid"   },
+                { pos: "top-4 left-4",     value: "20+",       label: "Products"     },
+                { pos: "top-4 right-4",    value: "35+ Yrs",   label: "Experience"   },
+                { pos: "bottom-4 left-4",  value: "24/7",      label: "Support"      },
+                { pos: "bottom-4 right-4", value: "IRA",       label: "Licensed"     },
               ].map(({ pos, value, label }) => (
                 <div
                   key={label}

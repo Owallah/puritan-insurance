@@ -417,10 +417,10 @@ export const NAV_LINKS: NavLink[] = [
 // ─────────────────────────────────────────────
 
 export const TRUST_INDICATORS: TrustIndicator[] = [
-  { id: "1", label: "Clients Served", value: "50,000+", icon: "👥" },
-  { id: "2", label: "Claims Paid Out", value: "KES 2.8B+", icon: "💰" },
-  { id: "3", label: "Years in Business", value: "16+", icon: "📅" },
-  { id: "4", label: "Claims Satisfaction", value: "98.4%", icon: "⭐" },
+  { id: "1", label: "Years Combined Experience", value: "35+",       icon: "📅" },
+  { id: "2", label: "Insurance Products",         value: "20+",       icon: "🛡️" },
+  { id: "3", label: "Response Time",              value: "< 24 Hrs",   icon: "⚡" },
+  { id: "4", label: "IRA Licensed",               value: "✓ Verified", icon: "⭐" },
 ];
 
 // export const values = [

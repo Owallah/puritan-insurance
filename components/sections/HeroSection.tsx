@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Phone, Shield, Award, Clock } from "lucide-react";
-import { SITE_CONFIG } from "@/lib/data";
+import { SITE_CONFIG, TRUST_INDICATORS } from "@/lib/data";
 import Image from "next/image";
 
 export function HeroSection() {
@@ -148,12 +148,7 @@ export function HeroSection() {
 
                   {/* Stats grid */}
                   <div className="grid grid-cols-2 gap-4">
-                    {[
-                      { label: "Clients", value: "50K+" },
-                      { label: "Claims Paid", value: "KES 2.8B" },
-                      { label: "Products", value: "8+" },
-                      { label: "Satisfaction", value: "98.4%" },
-                    ].map(({ label, value }) => (
+                    {TRUST_INDICATORS.map(({ label, value }) => (
                       <div
                         key={label}
                         className="bg-white/8 rounded-xl p-4 text-center border border-white/10"
