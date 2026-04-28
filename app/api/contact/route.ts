@@ -1,5 +1,4 @@
 import { sendContactFormNotification } from "@/lib/email";
-import { log } from "console";
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 

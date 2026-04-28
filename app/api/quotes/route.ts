@@ -42,7 +42,7 @@ const QuoteRequestSchema = z.object({
 function generateReferenceId(): string {
   const ts = Date.now().toString(36).toUpperCase();
   const rand = Math.random().toString(36).slice(2, 5).toUpperCase();
-  return `APX-${ts}-${rand}`;
+  return `PUR-${ts}-${rand}`;
 }
 
 export async function POST(request: NextRequest) {

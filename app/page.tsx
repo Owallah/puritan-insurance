@@ -4,20 +4,19 @@ import { ArrowRight, Shield, Zap, HeartHandshake, CheckCircle2, Star, Headphones
 import { HeroSection } from "@/components/sections/HeroSection";
 import { CTASection } from "@/components/sections/CTASection";
 import { ServiceCard } from "@/components/ui/ServiceCard";
-import { TRUST_INDICATORS, values, TESTIMONIALS } from "@/lib/data";
-import { ALL_PRODUCTS } from "@/lib/services";
+import { values, TESTIMONIALS } from "@/lib/data";
+import { getFeaturedServices } from "@/lib/sanity-queries";
 
 export const metadata: Metadata = {
-  title: "Apex Insurance Group — Protecting What Matters Most",
+  title: "Puritan Insurance Agency — Protecting What Matters Most",
   description:
-    "Kenya's most trusted insurance provider. Comprehensive motor, health, life, marine, and business coverage. IRA licensed. Get a free quote today.",
+    "Kenya's trusted insurance partner. Comprehensive motor, health, life, marine, and business coverage. IRA licensed. Get a free quote today.",
 };
 
 const trustIcons = [ShieldCheck, Zap, Users, Headphones];
 
-export default function HomePage() {
-  const featuredServices = ALL_PRODUCTS.filter((s) => s.popular).slice(0, 6);
-  const allServices = ALL_PRODUCTS.slice(0, 6);
+export default async function HomePage() {
+  const featuredServices = await getFeaturedServices();
 
   return (
     <>
@@ -71,7 +70,7 @@ export default function HomePage() {
               <div className="gold-divider mb-6" />
               <p className="text-gray-600 text-lg leading-relaxed mb-8">
                 We believe insurance should be simple, transparent, and fast. That's
-                why Apex has built its entire operation around the customer experience —
+                why Puritan has built its entire operation around the customer experience —
                 from instant online quotes to same-day claims responses.
               </p>
 

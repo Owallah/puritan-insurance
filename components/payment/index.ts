@@ -1,1 +1,1 @@
-export { PaystackPaymentDialog } from "./PaystackPaymentDialog";
+export { MpesaPaymentDialog } from "./MpesaPaymentDialog";

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { CreditCard } from "lucide-react";
-import { PaystackPaymentDialog } from "@/components/payment";
+import { Smartphone } from "lucide-react";
+import { MpesaPaymentDialog } from "@/components/payment";
 import { cn } from "@/lib/utils";
 import type { PremiumOption } from "@/types";
 
@@ -49,11 +49,11 @@ export function PaymentButton({
         onClick={() => setOpen(true)}
         className={cn(base, variants[variant], sizes[size], className)}
       >
-        <CreditCard size={size === "sm" ? 12 : size === "lg" ? 18 : 15} />
+        <Smartphone size={size === "sm" ? 12 : size === "lg" ? 18 : 15} />
         {buttonLabel}
       </button>
 
-      <PaystackPaymentDialog
+      <MpesaPaymentDialog
         isOpen={open}
         onClose={() => setOpen(false)}
         serviceName={serviceName}

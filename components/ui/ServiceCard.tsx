@@ -1,4 +1,3 @@
-// components/ui/ServiceCard.tsx (Updated version)
 "use client";
 
 import { useState } from "react";
@@ -6,7 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Briefcase, Car, CheckCircle2, Flame, HeartPulse, Home, LucideIcon, Plane, ShieldCheck, Ship, Wheat, CreditCard } from "lucide-react";
 import type { InsuranceService, PremiumOption } from "@/types";
 import { cn } from "@/lib/utils";
-import { PaystackPaymentDialog } from "@/components/payment";
+import { MpesaPaymentDialog } from "@/components/payment";
 import { Button } from "@/components/ui/button";
 
 const icons: Record<string, LucideIcon> = {
@@ -79,7 +78,7 @@ export function ServiceCard({
         </div>
 
         {selectedPremium && (
-          <PaystackPaymentDialog
+          <MpesaPaymentDialog
             isOpen={showPaymentDialog}
             onClose={() => setShowPaymentDialog(false)}
             serviceName={service.title}
@@ -154,7 +153,7 @@ export function ServiceCard({
         </div>
 
         {selectedPremium && (
-          <PaystackPaymentDialog
+          <MpesaPaymentDialog
             isOpen={showPaymentDialog}
             onClose={() => setShowPaymentDialog(false)}
             serviceName={service.title}
@@ -236,7 +235,7 @@ export function ServiceCard({
       </div>
 
       {selectedPremium && (
-        <PaystackPaymentDialog
+        <MpesaPaymentDialog
           isOpen={showPaymentDialog}
           onClose={() => setShowPaymentDialog(false)}
           serviceName={service.title}
