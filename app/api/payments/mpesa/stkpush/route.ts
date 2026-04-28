@@ -80,6 +80,13 @@ export async function POST(request: NextRequest) {
     const passkey     = process.env.MPESA_PASSKEY;
     const callbackUrl = process.env.MPESA_CALLBACK_URL;
 
+    console.log("[stkpush] ENV CHECK:", {
+      shortcode:   !!process.env.MPESA_SHORTCODE,
+      passkey:     !!process.env.MPESA_PASSKEY,
+      callbackUrl: !!process.env.MPESA_CALLBACK_URL,
+      consumerKey: !!process.env.MPESA_CONSUMER_KEY,
+    });
+
     if (!shortcode || !passkey || !callbackUrl) {
       console.error("[stkpush] Missing M-Pesa env vars");
       return NextResponse.json(
