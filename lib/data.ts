@@ -20,11 +20,11 @@ export const SITE_CONFIG = {
   phone: "+254 700 000 000",
   phoneTel: "+254700000000",
   email: "info@Puritaninsurance.co.ke",
-  address: "Puritan Tower, 4th Floor, Westlands, Nairobi, Kenya",
+  address: "Sky Dale Miotoni 300, Nairobi, Kenya",
   whatsapp: "2547XXXXXXXX",
   whatsappMessage: "Hello%20I%20need%20an%20insurance%20quote",
   googleMapsEmbedUrl:
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.818744583629!2d36.8063!3d-1.2700!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMcKwMTYnMTIuMCJTIDM2wrA0OCcyMi43IkU!5e0!3m2!1sen!2ske!4v1234567890",
+    "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3988.7695471253996!2d36.71042139227372!3d-1.3137459133820566!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bbf7f9ed649%3A0xd774b9670c730b55!2sSky%20Dale%20Miotoni%20300!5e0!3m2!1sen!2ske!4v1777884790331!5m2!1sen!2ske",
   socialLinks: {
     facebook: "https://facebook.com/puritaninsurance",
     twitter: "https://twitter.com/puritaninsurance",
@@ -417,10 +417,10 @@ export const NAV_LINKS: NavLink[] = [
 // ─────────────────────────────────────────────
 
 export const TRUST_INDICATORS: TrustIndicator[] = [
-  { id: "1", label: "Years Combined Experience", value: "35+",       icon: "📅" },
-  { id: "2", label: "Insurance Products",         value: "20+",       icon: "🛡️" },
-  { id: "3", label: "Response Time",              value: "< 24 Hrs",   icon: "⚡" },
-  { id: "4", label: "IRA Licensed",               value: "✓ Verified", icon: "⭐" },
+  { id: "1", label: "Years Combined Experience", value: "35+", icon: "📅" },
+  { id: "2", label: "Insurance Products", value: "20+", icon: "🛡️" },
+  { id: "3", label: "Response Time", value: "< 24 Hrs", icon: "⚡" },
+  { id: "4", label: "IRA Licensed", value: "✓ Verified", icon: "⭐" },
 ];
 
 // export const values = [
@@ -451,7 +451,7 @@ export const values: CompanyValue[] = [
   },
   {
     id: "expertise",
-    title: "Expertise & Profssional Mastery",
+    title: "Expertise & Professional Mastery",
     description:
       "We bring deep industry knowledge, technical skill, and continuous learning to provide sound, strategic insurance advice.",
     icon: "💡",
@@ -537,12 +537,24 @@ export const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
+export const PAYMENT_DETAILS = {
+  bank: {
+    accountName: "Puritan Insurance Agency Limited",
+    accountNumber: "1009390777",
+    branch: "NCBA Upper Hill Branch",
+  },
+  mpesa: {
+    paybill: "880100",
+    accountNo: "148176",
+  },
+} as const;
+
 // ─────────────────────────────────────────────
 // Insurance Types for Quote Form
 // ─────────────────────────────────────────────
 
 export const INSURANCE_TYPES = [
-  ...ALL_PRODUCTS.map(product => ({
+  ...ALL_PRODUCTS.map((product) => ({
     value: product.id,
     label: product.title,
   })),

@@ -13,7 +13,19 @@ import Image from "next/image";
 import { ALL_PRODUCTS } from "@/lib/services";
 
 export function Footer() {
-  const serviceLinks = ALL_PRODUCTS.slice(0, 6);
+  // Get unique services, limit to 6 most relevant/popular ones
+  const serviceLinks = ALL_PRODUCTS
+    .filter(service => service.popular) // Show popular services first
+    .slice(0, 6);
+  
+  // If less than 6 popular services, add more from the full list
+  if (serviceLinks.length < 6) {
+    const additionalServices = ALL_PRODUCTS
+      .filter(service => !service.popular)
+      .slice(0, 6 - serviceLinks.length);
+    serviceLinks.push(...additionalServices);
+  }
+  
   const currentYear = new Date().getFullYear();
 
   return (
@@ -111,7 +123,7 @@ export function Footer() {
               {serviceLinks.map((service) => (
                 <li key={service.id}>
                   <Link
-                    href={`/services#${service.id}`}
+                    href={`/services/${service.slug}`}
                     className="text-white/60 hover:text-gold-400 text-sm transition-colors duration-200 flex items-center gap-2 group"
                   >
                     <span

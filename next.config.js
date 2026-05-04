@@ -38,7 +38,7 @@ const securityHeaders = [
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob: https://cdn.sanity.io https://images.unsplash.com",
       "connect-src 'self' https://*.supabase.co https://api.paystack.co https://api.safaricom.co.ke https://sandbox.safaricom.co.ke https://api.sanity.io https://*.sanity.io wss://*.sanity.io",
-      "frame-src 'self'",
+      "frame-src 'self' https://www.google.com https://maps.google.com",
       "media-src 'self'",
       "object-src 'none'",
       "base-uri 'self'",
