@@ -134,7 +134,7 @@ export function HeroSection() {
                 {/* Main card */}
                 <div className="bg-navy-900/90 backdrop-blur-sm border border-white/15 rounded-3xl p-8 shadow-navy-lg">
                   <div className="text-center mb-8">
-                    <div className="w-32 h-32 rounded-2xl flex items-center justify-center mx-auto mb-4 ">
+                    <div className="w-32 h-32 bg-gold-50 rounded-2xl flex items-center justify-center mx-auto mb-4 ">
                       {/* <svg
                         viewBox="0 0 32 32"
                         fill="none"
