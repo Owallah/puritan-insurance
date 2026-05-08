@@ -134,7 +134,7 @@ export default async function HomePage() {
       </section>
 
       {/* Testimonials */}
-      <section className="section-padding bg-navy-950" aria-labelledby="testimonials-heading">
+      {/* <section className="section-padding bg-navy-950" aria-labelledby="testimonials-heading">
         <div className="container-default">
           <div className="text-center mb-12">
             <p className="section-eyebrow mb-3 text-gold-400">Client Stories</p>
@@ -150,7 +150,7 @@ export default async function HomePage() {
                 key={testimonial.id}
                 className="bg-white/8 border border-white/10 rounded-2xl p-7 hover:bg-white/12 transition-colors"
               >
-                {/* Stars */}
+                
                 <div className="flex gap-1 mb-4" aria-label={`${testimonial.rating} out of 5 stars`}>
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star key={i} size={14} className="fill-gold-400 text-gold-400" aria-hidden="true" />
@@ -179,7 +179,7 @@ export default async function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA Banner */}
       <CTASection />

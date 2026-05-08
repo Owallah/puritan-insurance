@@ -126,7 +126,7 @@ export default function ContactPage() {
                       <p className="font-semibold text-navy-900 break-all text-sm">
                         {SITE_CONFIG.email}
                       </p>
-                      <p className="text-gray-500 text-xs mt-0.5">Response within 4 hours</p>
+                      <p className="text-gray-500 text-xs mt-0.5">Response within 24 hours</p>
                     </div>
                   </a>
 

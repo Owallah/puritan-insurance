@@ -46,7 +46,10 @@ export function HeroSection() {
           <div className="max-w-xl">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 bg-gold-500/15 border border-gold-500/30 text-gold-400 text-xs font-semibold px-4 py-2 rounded-full mb-6 animate-fade-up">
-              <span className="w-1.5 h-1.5 bg-gold-400 rounded-full animate-pulse" aria-hidden="true" />
+              <span
+                className="w-1.5 h-1.5 bg-gold-400 rounded-full animate-pulse"
+                aria-hidden="true"
+              />
               IRA Licensed — Trusted Since {SITE_CONFIG.yearFounded}
             </div>
 
@@ -75,16 +78,22 @@ export function HeroSection() {
 
             {/* Subtext */}
             <p className="text-white/80 text-lg leading-relaxed mb-8 animate-fade-up animate-delay-200">
-              From motor and health to marine and business — Puritan Insurance Agency
-              delivers comprehensive coverage with fast claims, transparent pricing,
-              and world-class service.
+              From motor and health to marine and business — Puritan Insurance
+              Agency delivers comprehensive coverage with fast claims,
+              transparent pricing, and world-class service.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-wrap gap-4 mb-10 animate-fade-up animate-delay-300">
-              <Link href="/quote" className="btn-primary text-base px-7 py-3.5 group">
+              <Link
+                href="/quote"
+                className="btn-primary text-base px-7 py-3.5 group"
+              >
                 Get a Free Quote
-                <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight
+                  size={18}
+                  className="group-hover:translate-x-1 transition-transform"
+                />
               </Link>
               <a
                 href={`tel:${SITE_CONFIG.phoneTel}`}
@@ -102,8 +111,15 @@ export function HeroSection() {
                 { icon: Award, label: "98.4% Claims Satisfaction" },
                 { icon: Clock, label: "24/7 Support" },
               ].map(({ icon: Icon, label }) => (
-                <div key={label} className="flex items-center gap-2 text-white/70 text-sm">
-                  <Icon size={15} className="text-gold-400" aria-hidden="true" />
+                <div
+                  key={label}
+                  className="flex items-center gap-2 text-white/70 text-sm"
+                >
+                  <Icon
+                    size={15}
+                    className="text-gold-400"
+                    aria-hidden="true"
+                  />
                   <span>{label}</span>
                 </div>
               ))}
@@ -116,10 +132,10 @@ export function HeroSection() {
               {/* Floating cards */}
               <div className="relative w-full max-w-md mx-auto">
                 {/* Main card */}
-                <div className="bg-navy-900/80 backdrop-blur-sm border border-white/15 rounded-3xl p-8 shadow-navy-lg">
+                <div className="bg-navy-900/90 backdrop-blur-sm border border-white/15 rounded-3xl p-8 shadow-navy-lg">
                   <div className="text-center mb-8">
-                    <div className="w-20 h-20 bg-gold-gradient rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-gold-glow">
-                      <svg
+                    <div className="w-32 h-32 rounded-2xl flex items-center justify-center mx-auto mb-4 ">
+                      {/* <svg
                         viewBox="0 0 32 32"
                         fill="none"
                         className="w-10 h-10"
@@ -136,7 +152,15 @@ export function HeroSection() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
-                      </svg>
+                      </svg> */}
+
+                      <Image
+                        src="/logo_mark.webp"
+                        alt={SITE_CONFIG.name}
+                        width={160}
+                        height={160}
+                        className="size-48 object-none"
+                      />
                     </div>
                     <h2 className="font-display text-2xl font-bold text-white mb-1">
                       Puritan Insurance Agency
@@ -169,8 +193,16 @@ export function HeroSection() {
 
       {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 right-0 z-10" aria-hidden="true">
-        <svg viewBox="0 0 1440 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <path d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 28C840 36 960 42 1080 40C1200 38 1320 28 1380 23L1440 18V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0Z" fill="white" />
+        <svg
+          viewBox="0 0 1440 60"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full"
+        >
+          <path
+            d="M0 60L60 50C120 40 240 20 360 15C480 10 600 20 720 28C840 36 960 42 1080 40C1200 38 1320 28 1380 23L1440 18V60H1380C1320 60 1200 60 1080 60C960 60 840 60 720 60C600 60 480 60 360 60C240 60 120 60 60 60H0Z"
+            fill="white"
+          />
         </svg>
       </div>
     </section>

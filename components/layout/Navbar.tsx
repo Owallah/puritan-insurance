@@ -71,11 +71,11 @@ export function Navbar() {
             {/* <div className="relative w-16 h-16 flex-shrink-0"> */}
               {/* <div className="w-16 h-16 bg-gold-800 rounded-lg flex items-center justify-center shadow-gold-glow group-hover:scale-105 transition-transform duration-200"> */}
                 <Image
-                  src="/logo.webp"
+                  src="/logo_alt.webp"
                   alt={SITE_CONFIG.name}
-                  width={140}
-                  height={140}
-                  className="size-40 object-contain"
+                  width={200}
+                  height={200}
+                  className="size-48 object-contain"
                 />
               {/* </div> */}
             {/* </div> */}

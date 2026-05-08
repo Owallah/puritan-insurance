@@ -36,13 +36,13 @@ export function Footer() {
           {/* Brand column */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5 group w-fit">
-              <div className="w-auto h-16 bg-gold-50 rounded-lg flex items-center justify-center shadow-gold-glow flex-shrink-0">
+              <div className="w-auto h-16 rounded-lg flex items-center justify-center flex-shrink-0">
                 <Image
-                  src="/logo.webp"
+                  src="/logo_white.webp"
                   alt={SITE_CONFIG.name}
-                  width={140}
-                  height={140}
-                  className="size-40 object-contain"
+                  width={200}
+                  height={200}
+                  className="size-48 object-contain"
                 />
               </div>
             </Link>
@@ -123,7 +123,7 @@ export function Footer() {
               {serviceLinks.map((service) => (
                 <li key={service.id}>
                   <Link
-                    href={`/services/${service.slug}`}
+                    href={`/services#${service.category}`}
                     className="text-white/60 hover:text-gold-400 text-sm transition-colors duration-200 flex items-center gap-2 group"
                   >
                     <span
