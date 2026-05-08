@@ -134,8 +134,8 @@ export function HeroSection() {
                 {/* Main card */}
                 <div className="bg-navy-900/90 backdrop-blur-sm border border-white/15 rounded-3xl p-8 shadow-navy-lg">
                   <div className="text-center mb-8">
-                    <div className="w-32 h-32 bg-gold-gradient rounded-2xl flex items-center justify-center mx-auto mb-4 ">
-                      <svg
+                    <div className="w-32 h-32 bg-gold-50 rounded-2xl flex items-center justify-center mx-auto mb-4 ">
+                      {/* <svg
                         viewBox="0 0 32 32"
                         fill="none"
                         className="w-10 h-10"
@@ -152,15 +152,15 @@ export function HeroSection() {
                           strokeLinecap="round"
                           strokeLinejoin="round"
                         />
-                      </svg>
+                      </svg> */}
 
-                      {/* <Image
+                      <Image
                         src="/logo_mark.png"
                         alt={SITE_CONFIG.name}
                         width={160}
                         height={160}
                         className="size-48 object-none"
-                      /> */}
+                      />
                     </div>
                     <h2 className="font-display text-2xl font-bold text-white mb-1">
                       Puritan Insurance Agency
