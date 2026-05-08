@@ -155,7 +155,7 @@ export function HeroSection() {
                       </svg> */}
 
                       <Image
-                        src="/logo_mark.webp"
+                        src="/logo_mark.png"
                         alt={SITE_CONFIG.name}
                         width={160}
                         height={160}
