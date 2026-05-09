@@ -17,11 +17,13 @@ export const SITE_CONFIG = {
   tagline: "Protecting What Matters Most",
   description:
     "Kenya's most trusted insurance provider. Motor, health, life, marine, and commercial coverage — built around you.",
-  phone: "+254 141 473 906",
-  phoneTel: "+254141473907",
+    phone: "+254 141 473 906",
+    phoneTel: "+254141473906",
+    phone2: "+254 141 473 907",
+    phoneTel2: "+254141473907",
   email: "info@puritaninsuranceagency.com",
   address: "Sky Dale Miotoni 300, Nairobi, Kenya",
-  whatsapp: "254141473907",
+  whatsapp: "254141473906",
   whatsappMessage: "Hello%20I%20need%20an%20insurance%20quote",
   googleMapsEmbedUrl:
     "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3988.7695471253996!2d36.71042139227372!3d-1.3137459133820566!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1bbf7f9ed649%3A0xd774b9670c730b55!2sSky%20Dale%20Miotoni%20300!5e0!3m2!1sen!2ske!4v1777884790331!5m2!1sen!2ske",

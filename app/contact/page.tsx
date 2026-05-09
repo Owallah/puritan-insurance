@@ -6,8 +6,7 @@ import { buildWhatsAppUrl } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Contact Us",
-  description:
-    `Get in touch with ${SITE_CONFIG.name}. Call, WhatsApp, email, or visit our Nairobi office. We respond within 4 hours.`,
+  description: `Get in touch with ${SITE_CONFIG.name}. Call, WhatsApp, email, or visit our Nairobi office. We respond within 4 hours.`,
 };
 
 export default function ContactPage() {
@@ -27,14 +26,16 @@ export default function ContactPage() {
           <div className="absolute top-0 right-0 w-80 h-80 bg-gold-500/6 rounded-full -translate-y-1/2 translate-x-1/2" />
         </div>
         <div className="container-default relative z-10 text-center">
-          <p className="section-eyebrow text-gold-400 mb-3">We're Here to Help</p>
+          <p className="section-eyebrow text-gold-400 mb-3">
+            We're Here to Help
+          </p>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-5">
             Contact {SITE_CONFIG.name}
           </h1>
           <div className="gold-divider mx-auto mb-5" />
           <p className="text-white/65 text-lg max-w-xl mx-auto">
-            Have a question, need a quote, or want to know more about our products?
-            Our team is ready to assist you.
+            Have a question, need a quote, or want to know more about our
+            products? Our team is ready to assist you.
           </p>
         </div>
         <div className="absolute bottom-0 left-0 right-0" aria-hidden="true">
@@ -54,7 +55,6 @@ export default function ContactPage() {
       >
         <div className="container-default">
           <div className="grid lg:grid-cols-3 gap-10 lg:gap-12">
-
             {/* Left: Contact info */}
             <div className="space-y-6">
               <div>
@@ -63,17 +63,12 @@ export default function ContactPage() {
                 </h2>
 
                 <div className="space-y-4">
-
                   {/* Phone */}
-                  <a
-                    href={`tel:${SITE_CONFIG.phoneTel}`}
-                    className="card-base flex p-5 items-start gap-4 hover:border-navy-200 transition-colors group"
-                    aria-label={`Call us at ${SITE_CONFIG.phone}`}
-                  >
-                    <div className="w-11 h-11 bg-navy-900 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-gold-500 transition-colors">
+                  <div className="card-base flex p-5 items-start gap-4">
+                    <div className="w-11 h-11 bg-navy-900 rounded-xl flex items-center justify-center flex-shrink-0">
                       <Phone
                         size={18}
-                        className="text-gold-400 group-hover:text-navy-900 transition-colors"
+                        className="text-gold-400"
                         aria-hidden="true"
                       />
                     </div>
@@ -81,10 +76,25 @@ export default function ContactPage() {
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
                         Call Us
                       </p>
-                      <p className="font-semibold text-navy-900">{SITE_CONFIG.phone}</p>
-                      <p className="text-gray-500 text-xs mt-0.5">Mon–Sat, 8am–6pm</p>
+                      <a
+                        href={`tel:${SITE_CONFIG.phoneTel}`}
+                        className="block font-semibold text-navy-900 hover:text-gold-600 transition-colors"
+                        aria-label={`Call us at ${SITE_CONFIG.phone}`}
+                      >
+                        {SITE_CONFIG.phone}
+                      </a>
+                      <a
+                        href={`tel:${SITE_CONFIG.phoneTel2}`}
+                        className="block font-semibold text-navy-900 hover:text-gold-600 transition-colors"
+                        aria-label={`Call us at ${SITE_CONFIG.phone2}`}
+                      >
+                        {SITE_CONFIG.phone2}
+                      </a>
+                      <p className="text-gray-500 text-xs mt-0.5">
+                        Mon–Sat, 8am–6pm
+                      </p>
                     </div>
-                  </a>
+                  </div>
 
                   {/* WhatsApp */}
                   <a
@@ -95,14 +105,22 @@ export default function ContactPage() {
                     aria-label="Chat with us on WhatsApp"
                   >
                     <div className="w-11 h-11 bg-[#25D366] rounded-xl flex items-center justify-center flex-shrink-0">
-                      <MessageCircle size={18} className="text-white" aria-hidden="true" />
+                      <MessageCircle
+                        size={18}
+                        className="text-white"
+                        aria-hidden="true"
+                      />
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
                         WhatsApp
                       </p>
-                      <p className="font-semibold text-navy-900">Chat with an Advisor</p>
-                      <p className="text-gray-500 text-xs mt-0.5">Typically replies in minutes</p>
+                      <p className="font-semibold text-navy-900">
+                        Chat with an Advisor
+                      </p>
+                      <p className="text-gray-500 text-xs mt-0.5">
+                        Typically replies in minutes
+                      </p>
                     </div>
                   </a>
 
@@ -126,14 +144,20 @@ export default function ContactPage() {
                       <p className="font-semibold text-navy-900 break-all text-sm">
                         {SITE_CONFIG.email}
                       </p>
-                      <p className="text-gray-500 text-xs mt-0.5">Response within 24 hours</p>
+                      <p className="text-gray-500 text-xs mt-0.5">
+                        Response within 24 hours
+                      </p>
                     </div>
                   </a>
 
                   {/* Address */}
                   <div className="card-base flex p-5 items-start gap-4">
                     <div className="w-11 h-11 bg-navy-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <MapPin size={18} className="text-gold-400" aria-hidden="true" />
+                      <MapPin
+                        size={18}
+                        className="text-gold-400"
+                        aria-hidden="true"
+                      />
                     </div>
                     <div>
                       <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-0.5">
@@ -144,25 +168,32 @@ export default function ContactPage() {
                       </p>
                     </div>
                   </div>
-
                 </div>
               </div>
 
               {/* Office Hours */}
               <div className="card-base p-5">
                 <div className="flex items-center gap-2 mb-4">
-                  <Clock size={16} className="text-gold-500" aria-hidden="true" />
-                  <h3 className="font-semibold text-navy-900 text-sm">Office Hours</h3>
+                  <Clock
+                    size={16}
+                    className="text-gold-500"
+                    aria-hidden="true"
+                  />
+                  <h3 className="font-semibold text-navy-900 text-sm">
+                    Office Hours
+                  </h3>
                 </div>
                 <dl className="space-y-2 text-sm">
                   {[
                     { day: "Monday – Friday", hours: "8:00 AM – 5:00 PM" },
-                    { day: "Saturday",        hours: "9:00 AM – 12:30 PM" },
-                    { day: "Sunday & Holidays", hours: "Closed"           },
+                    { day: "Saturday", hours: "9:00 AM – 12:30 PM" },
+                    { day: "Sunday & Holidays", hours: "Closed" },
                   ].map(({ day, hours }) => (
                     <div key={day} className="flex justify-between gap-4">
                       <dt className="text-gray-600">{day}</dt>
-                      <dd className="font-medium text-navy-900 text-right">{hours}</dd>
+                      <dd className="font-medium text-navy-900 text-right">
+                        {hours}
+                      </dd>
                     </div>
                   ))}
                 </dl>
@@ -186,7 +217,6 @@ export default function ContactPage() {
                 <ContactForm />
               </div>
             </div>
-
           </div>
         </div>
       </section>

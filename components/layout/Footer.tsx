@@ -14,18 +14,17 @@ import { ALL_PRODUCTS } from "@/lib/services";
 
 export function Footer() {
   // Get unique services, limit to 6 most relevant/popular ones
-  const serviceLinks = ALL_PRODUCTS
-    .filter(service => service.popular) // Show popular services first
+  const serviceLinks = ALL_PRODUCTS.filter((service) => service.popular) // Show popular services first
     .slice(0, 6);
-  
+
   // If less than 6 popular services, add more from the full list
   if (serviceLinks.length < 6) {
-    const additionalServices = ALL_PRODUCTS
-      .filter(service => !service.popular)
-      .slice(0, 6 - serviceLinks.length);
+    const additionalServices = ALL_PRODUCTS.filter(
+      (service) => !service.popular
+    ).slice(0, 6 - serviceLinks.length);
     serviceLinks.push(...additionalServices);
   }
-  
+
   const currentYear = new Date().getFullYear();
 
   return (
@@ -144,10 +143,7 @@ export function Footer() {
             </h3>
             <ul className="space-y-4">
               <li>
-                <a
-                  href={`tel:${SITE_CONFIG.phoneTel}`}
-                  className="flex items-start gap-3 text-white/60 hover:text-gold-400 transition-colors group"
-                >
+                <div className="flex items-start gap-3 text-white/60">
                   <div className="w-8 h-8 bg-white/10 rounded-lg flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-gold-500/20">
                     <Phone size={14} className="text-gold-400" />
                   </div>
@@ -155,9 +151,20 @@ export function Footer() {
                     <div className="text-xs text-white/40 uppercase tracking-wide mb-0.5">
                       Phone / WhatsApp
                     </div>
-                    <div className="text-sm">{SITE_CONFIG.phone}</div>
+                    <a
+                      href={`tel:${SITE_CONFIG.phoneTel}`}
+                      className="block text-sm hover:text-gold-400 transition-colors"
+                    >
+                      {SITE_CONFIG.phone}
+                    </a>
+                    <a
+                      href={`tel:${SITE_CONFIG.phoneTel2}`}
+                      className="block text-sm hover:text-gold-400 transition-colors"
+                    >
+                      {SITE_CONFIG.phone2}
+                    </a>
                   </div>
-                </a>
+                </div>
               </li>
               <li>
                 <a
